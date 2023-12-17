@@ -11,8 +11,8 @@
 #emailAddress            = optional
 
 function vars_setup() {
-        # Some Global Variables
-        policies=(
+        # Make an array of the openssl-easyrsa.cnf variables included above
+        switches=(
                 "countryName"
                 "stateOrProvinceName"
                 "localityName" "organizationName"
