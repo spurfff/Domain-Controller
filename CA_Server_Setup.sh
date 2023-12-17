@@ -10,18 +10,6 @@
 #name                    = optional
 #emailAddress            = optional
 
-#!/bin/bash
-
-#[ policy_anything ]
-#countryName             = optional
-#stateOrProvinceName     = optional
-#localityName            = optional
-#organizationName        = optional
-#organizationalUnitName  = optional
-#commonName              = supplied
-#name                    = optional
-#emailAddress            = optional
-
 function vars_setup() {
         # Make an array of the openssl-easyrsa.cnf variables included above
         policies=(
