@@ -1,0 +1,30 @@
+include "/etc/bind/dc1_ddns.key";
+
+zone "wired.net" {
+        type master;
+        file "/etc/bind/zones/forward.wired.net";
+        update-policy {
+                grant dc1_ddns wildcard *.wired.net A DHCID;
+        };
+};
+zone "0.0.10.in-addr.arpa" {
+        type master;
+        file "/etc/bind/zones/reverse.wired.net";
+        update-policy {
+                grant dc1_ddns wildcard *.0.0.10.in-addr.arpa PTR DHCID;
+        };
+};
+zone "lab.net" {
+        type master;
+        file "/etc/bind/zones/forward.lab.net";
+        update-policy {
+                grant dc1_ddns wildcard *.lab.net A DHCID;
+        };
+};
+zone "1.168.192.in-addr.arpa" {
+        type master;
+        file "/etc/bind/zones/reverse.lab.net";
+        update-policy {
+                grant dc1_ddns wildcard *.1.168.192.in-addr.arpa PTR DHCID;
+        };
+};
